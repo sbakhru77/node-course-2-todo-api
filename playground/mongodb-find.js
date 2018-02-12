@@ -7,15 +7,19 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
 
   console.log('Connected to MondoDB server');
 
-  db.collection('Users').find({name: 'Sunila'}).toArray().then((docs) => {
+  db.collection('Users').find({location: 'San Jose'}).toArray().then((docs) => {
     console.log(JSON.stringify(docs, undefined, 2));
   });
 
-  db.collection('Users').find({name: 'Sunila'}).count().then((count) => {
-    console.log(`user count: ${count}`);
-  }, (err) => {
-    console.log('unable to find the user', err);
-  });
+  // db.collection('Users').find({name: 'Dummy'}).toArray().then((docs) => {
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // });
+  //
+  // db.collection('Users').find({name: 'Sunila'}).count().then((count) => {
+  //   console.log(`user count: ${count}`);
+  // }, (err) => {
+  //   console.log('unable to find the user', err);
+  // });
 
 
 

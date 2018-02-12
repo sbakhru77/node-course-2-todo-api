@@ -7,11 +7,23 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
 
   console.log('Connected to MondoDB server');
 
-  db.collection('Users').insertOne({
-    name: 'Sunil',
-    age: 42,
+  db.collection('Users').insertMany([{
+    name: 'Sanaa',
+    age: 10,
     location: 'San Jose'
-  }, (err, result) => {
+  },{
+    name: 'Sunila',
+    age: 41,
+    location: 'San Jose'
+  }, {
+    name: 'Sunila',
+    age: 40,
+    location: 'Santa Clara'
+  }, {
+    name: 'Sunila',
+    age: 40,
+    location: 'San Jose'
+  }], (err, result) => {
     if(err) {
       return console.log('Unable to insert user', err);
     }
